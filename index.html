@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>firmenwissen.ai — Implizites Wissen sichtbar machen. KI produktiv einsetzen.</title>
+<meta name="description" content="firmenwissen.ai macht implizites Wissen in Unternehmen sichtbar und übersetzt es in funktionierende KI-Anwendungen. Für KMU bis 100 Mitarbeiter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   FIRMENWISSEN.AI — LANDING PAGE
+   Dark Premium B2B Design
+   ═══════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #08101c;
+  --bg-2: #0d1a2d;
+  --bg-3: #132240;
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --teal: #10b981;
+  --teal-glow: rgba(16, 185, 129, 0.12);
+  --amber: #f59e0b;
+  --amber-glow: rgba(245, 158, 11, 0.10);
+  --red: #ef4444;
+  --purple: #8b5cf6;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(255,255,255,0.12);
+  --card-bg: rgba(255,255,255,0.03);
+  --card-hover: rgba(255,255,255,0.06);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --container: 1120px;
+  --section-gap: 120px;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+/* ── NAVIGATION ─────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(8, 16, 28, 0.85);
+  backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.nav-inner {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 19px; font-weight: 700;
+  color: var(--text);
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.nav-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent), 0 0 24px rgba(59,130,246,0.3);
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.8); }
+}
+.nav-links { display: flex; gap: 4px; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--text-secondary);
+  text-decoration: none; padding: 6px 14px; border-radius: 6px;
+  transition: all 0.2s; letter-spacing: 0.2px;
+}
+.nav-links a:hover { color: var(--text); background: var(--card-bg); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent); color: #fff;
+  font-size: 13px; font-weight: 600;
+  padding: 8px 20px; border-radius: 8px;
+  text-decoration: none; transition: all 0.2s;
+  border: none; cursor: pointer;
+}
+.nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(59,130,246,0.4); }
+
+/* ── HERO ────────────────────────────────────────── */
+.hero {
+  padding: 160px 0 100px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse, rgba(59,130,246,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent-light);
+  background: var(--accent-glow);
+  border: 1px solid rgba(59,130,246,0.25);
+  padding: 6px 16px; border-radius: 24px;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 700; line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px; max-width: 780px;
+}
+.hero h1 em {
+  font-style: italic; color: var(--accent-light);
+  text-decoration: underline;
+  text-decoration-color: rgba(59,130,246,0.3);
+  text-underline-offset: 6px;
+}
+.hero-sub {
+  font-size: 18px; color: var(--text-secondary);
+  max-width: 600px; line-height: 1.75;
+  margin-bottom: 36px;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #fff;
+  font-size: 15px; font-weight: 600;
+  padding: 14px 28px; border-radius: 10px;
+  text-decoration: none; transition: all 0.2s;
+  border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,0.35); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--text-secondary);
+  font-size: 15px; font-weight: 500;
+  padding: 14px 28px; border-radius: 10px;
+  text-decoration: none; transition: all 0.2s;
+  border: 1px solid var(--border-hover);
+}
+.btn-secondary:hover { color: var(--text); border-color: var(--text-muted); background: var(--card-bg); }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill {
+  font-size: 13px; font-weight: 500;
+  padding: 6px 14px; border-radius: 20px;
+  border: 1px solid var(--border-hover);
+  color: var(--text-secondary); background: var(--card-bg);
+}
+.pill--blue { border-color: rgba(59,130,246,0.3); color: var(--accent-light); background: var(--accent-glow); }
+.pill--green { border-color: rgba(16,185,129,0.3); color: #34d399; background: var(--teal-glow); }
+.pill--amber { border-color: rgba(245,158,11,0.3); color: #fbbf24; background: var(--amber-glow); }
+
+/* ── SECTION UTILITIES ──────────────────────────── */
+section { padding: var(--section-gap) 0 0; }
+.section-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent-light);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700; line-height: 1.15;
+  letter-spacing: -0.8px; margin-bottom: 16px;
+  max-width: 640px;
+}
+.section-desc {
+  font-size: 17px; color: var(--text-secondary);
+  max-width: 560px; line-height: 1.7;
+  margin-bottom: 48px;
+}
+.divider {
+  height: 1px; background: linear-gradient(90deg, var(--border-hover), transparent 80%);
+  margin: var(--section-gap) 0 0;
+}
+
+/* ── VALUE STRIP ────────────────────────────────── */
+.value-strip {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  border-radius: 16px; border: 1px solid var(--border-hover);
+  background: var(--bg-2); overflow: hidden;
+  margin-top: 64px;
+}
+.value-item {
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.value-item:last-child { border-right: none; }
+.value-item:hover { background: var(--card-hover); }
+.value-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+.value-label { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.value-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+/* ── STEPS ──────────────────────────────────────── */
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.step-card {
+  padding: 32px 24px; border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  position: relative; transition: all 0.2s;
+}
+.step-card:hover { background: var(--card-hover); border-color: var(--border-hover); transform: translateY(-3px); }
+.step-num {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700;
+  background: var(--accent-glow); color: var(--accent-light);
+  border: 1px solid rgba(59,130,246,0.25);
+  margin-bottom: 16px;
+}
+.step-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.step-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── PROBLEM SECTION ────────────────────────────── */
+.problem-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 16px;
+}
+.problem-card {
+  padding: 36px 32px; border-radius: 14px;
+  border: 1px solid; position: relative; overflow: hidden;
+}
+.problem-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.problem-card--official {
+  border-color: rgba(255,255,255,0.08); background: var(--card-bg);
+}
+.problem-card--official::before { background: var(--text-muted); }
+.problem-card--real {
+  border-color: rgba(59,130,246,0.2); background: rgba(59,130,246,0.04);
+}
+.problem-card--real::before { background: var(--accent); }
+.problem-tag {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px;
+  margin-bottom: 16px;
+}
+.problem-card--official .problem-tag { background: rgba(255,255,255,0.06); color: var(--text-muted); }
+.problem-card--real .problem-tag { background: var(--accent-glow); color: var(--accent-light); }
+.problem-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.problem-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+.problem-card ul { list-style: none; margin-top: 12px; }
+.problem-card ul li {
+  font-size: 14px; color: var(--text-secondary);
+  padding: 6px 0; display: flex; gap: 10px; line-height: 1.55;
+}
+.problem-card ul li::before { content: '→'; color: var(--text-muted); flex-shrink: 0; }
+
+/* ── PRODUCT SECTION ────────────────────────────── */
+.product-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.product-card {
+  padding: 36px 32px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  position: relative; overflow: hidden;
+}
+.product-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.product-card:first-child::before { background: var(--accent); }
+.product-card:last-child::before { background: var(--teal); }
+.product-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+.product-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.product-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
+.product-badge {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px;
+}
+.product-card:first-child .product-badge { background: var(--accent-glow); color: var(--accent-light); }
+.product-card:last-child .product-badge { background: var(--teal-glow); color: #34d399; }
+
+/* ── WORKFLOW ────────────────────────────────────── */
+.workflow-steps { position: relative; }
+.wf-step {
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 0; margin-bottom: 4px;
+}
+.wf-left { display: flex; flex-direction: column; align-items: center; }
+.wf-circle {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; flex-shrink: 0;
+  border: 2px solid;
+}
+.wf-line { width: 2px; flex: 1; min-height: 16px; background: var(--border); margin: 4px 0; }
+.wf-step:last-child .wf-line { display: none; }
+.wf-body { padding: 0 0 24px 20px; }
+.wf-body-inner {
+  padding: 24px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  transition: all 0.2s;
+}
+.wf-body-inner:hover { background: var(--card-hover); border-color: var(--border-hover); }
+.wf-role {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.wf-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.wf-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+.wf-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.wf-tag {
+  font-size: 11px; font-weight: 500;
+  padding: 3px 10px; border-radius: 4px;
+  background: rgba(255,255,255,0.04); color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.wf-tag--out { color: var(--accent-light); background: var(--accent-glow); border-color: rgba(59,130,246,0.2); }
+
+.s1 .wf-circle { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.4); color: var(--accent-light); }
+.s2 .wf-circle { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.4); color: #34d399; }
+.s3 .wf-circle { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.4); color: #fbbf24; }
+.s4 .wf-circle { background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.4); color: #a78bfa; }
+.s5 .wf-circle { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.4); color: #34d399; }
+.s1 .wf-role { color: var(--accent-light); }
+.s2 .wf-role { color: #34d399; }
+.s3 .wf-role { color: #fbbf24; }
+.s4 .wf-role { color: #a78bfa; }
+.s5 .wf-role { color: #34d399; }
+
+/* ── ARCHITECTURE ───────────────────────────────── */
+.arch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+.arch-card {
+  padding: 28px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--card-bg);
+}
+.arch-tag {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px; margin-bottom: 14px;
+}
+.arch-card--correct { border-color: rgba(16,185,129,0.25); }
+.arch-card--correct .arch-tag { background: var(--teal-glow); color: #34d399; }
+.arch-card--wrong { border-color: rgba(239,68,68,0.15); opacity: 0.7; }
+.arch-card--wrong .arch-tag { background: rgba(239,68,68,0.1); color: #f87171; }
+.arch-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.arch-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+/* ── CONFLICT LOGIC ─────────────────────────────── */
+.conflict-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 24px; }
+.conflict-card {
+  padding: 24px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.conflict-type {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 4px;
+  display: inline-block; width: fit-content;
+}
+.conflict-type--pattern { background: var(--teal-glow); color: #34d399; }
+.conflict-type--deviation { background: var(--amber-glow); color: #fbbf24; }
+.conflict-type--conflict { background: rgba(239,68,68,0.1); color: #f87171; }
+.conflict-card h3 { font-size: 15px; font-weight: 700; line-height: 1.3; }
+.conflict-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+.conflict-action {
+  font-size: 12px; color: var(--text-muted); font-style: italic;
+  padding-top: 10px; border-top: 1px solid var(--border);
+}
+
+/* ── MATURITY MODEL ─────────────────────────────── */
+.maturity-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+  margin-bottom: 24px;
+}
+.maturity-card {
+  padding: 20px 16px; border-radius: 12px;
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.maturity-level {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.maturity-name { font-size: 15px; font-weight: 700; }
+.maturity-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; flex: 1; }
+.maturity-signal {
+  font-size: 11px; font-style: italic; color: var(--text-muted);
+  line-height: 1.4; padding: 8px; border-radius: 6px;
+  background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+}
+.m1 { border-color: rgba(239,68,68,0.25); }
+.m1 .maturity-name { color: #f87171; }
+.m2 { border-color: rgba(245,158,11,0.25); }
+.m2 .maturity-name { color: #fbbf24; }
+.m3 { border-color: rgba(139,92,246,0.25); }
+.m3 .maturity-name { color: #a78bfa; }
+.m4 { border-color: rgba(59,130,246,0.25); }
+.m4 .maturity-name { color: var(--accent-light); }
+.m5 { border-color: rgba(16,185,129,0.25); }
+.m5 .maturity-name { color: #34d399; }
+
+/* ── IMPACT SCORE ───────────────────────────────── */
+.impact-box {
+  padding: 28px; border-radius: 14px;
+  border: 1px solid rgba(245,158,11,0.25);
+  background: rgba(245,158,11,0.04);
+}
+.impact-title { font-size: 16px; font-weight: 700; color: #fbbf24; margin-bottom: 18px; }
+.impact-formula {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: 10px; margin-bottom: 16px;
+}
+.impact-factor {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+}
+.impact-factor span:first-child { font-size: 16px; }
+.impact-factor span:last-child { font-size: 14px; font-weight: 600; }
+.impact-op { font-size: 20px; color: var(--text-muted); font-weight: 700; }
+.impact-result {
+  padding: 8px 20px; border-radius: 8px;
+  background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.35);
+  font-size: 15px; font-weight: 700; color: #fbbf24;
+}
+.impact-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── INTERVIEW SESSIONS ─────────────────────────── */
+.sessions-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.session-card { border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+.session-head {
+  padding: 14px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+}
+.session-head .s-time { font-weight: 500; opacity: 0.7; }
+.sh-1 { background: rgba(59,130,246,0.1); color: var(--accent-light); }
+.sh-2 { background: rgba(245,158,11,0.1); color: #fbbf24; }
+.sh-3 { background: rgba(16,185,129,0.1); color: #34d399; }
+.session-body { padding: 16px 18px; background: var(--card-bg); }
+.session-body h4 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.session-body ul { list-style: none; }
+.session-body ul li {
+  font-size: 13px; color: var(--text-secondary); padding: 5px 0;
+  display: flex; gap: 8px; line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.session-body ul li:last-child { border-bottom: none; }
+.session-body ul li::before { content: '·'; color: var(--text-muted); flex-shrink: 0; }
+
+/* ── KILLER FEATURES ────────────────────────────── */
+.killer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.killer-card {
+  padding: 28px; border-radius: 14px;
+  border: 1px solid rgba(245,158,11,0.2);
+  background: rgba(245,158,11,0.03);
+  transition: all 0.2s;
+}
+.killer-card:hover { background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.35); transform: translateY(-3px); }
+.killer-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+.killer-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.killer-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── DEPARTMENTS ────────────────────────────────── */
+.dept-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.dept-card {
+  padding: 24px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  transition: all 0.2s;
+}
+.dept-card:hover { background: var(--card-hover); border-color: var(--border-hover); transform: translateY(-2px); }
+.dept-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+.dept-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.dept-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 10px; }
+.dept-auto {
+  font-size: 11px; font-weight: 600;
+  color: #34d399; background: var(--teal-glow);
+  border: 1px solid rgba(16,185,129,0.2);
+  padding: 3px 10px; border-radius: 4px; display: inline-block;
+}
+
+/* ── USE CASES ──────────────────────────────────── */
+.usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.usecase-card {
+  padding: 28px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  display: flex; flex-direction: column; gap: 10px;
+  transition: all 0.2s; position: relative;
+}
+.usecase-card:hover { background: var(--card-hover); border-color: var(--border-hover); transform: translateY(-3px); }
+.usecase-card--featured { border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.04); }
+.uc-badge {
+  position: absolute; top: -1px; right: 16px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+  background: var(--accent); color: #fff;
+  padding: 4px 12px; border-radius: 0 0 6px 6px;
+  text-transform: uppercase;
+}
+.usecase-icon { font-size: 24px; }
+.usecase-area {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.usecase-card h3 { font-size: 16px; font-weight: 700; line-height: 1.3; }
+.usecase-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+.uc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.uc-tag {
+  font-size: 11px; font-weight: 500;
+  padding: 3px 9px; border-radius: 4px;
+}
+.uc-tag--green { background: var(--teal-glow); color: #34d399; }
+.uc-tag--blue { background: var(--accent-glow); color: var(--accent-light); }
+.uc-tag--amber { background: var(--amber-glow); color: #fbbf24; }
+
+/* ── 6 LAYERS ───────────────────────────────────── */
+.layers-wrap { position: relative; padding-left: 40px; }
+.layers-spine {
+  position: absolute; left: 14px; top: 28px; bottom: 28px;
+  width: 3px; border-radius: 3px;
+  background: linear-gradient(180deg, #3b82f6, #10b981, #f59e0b, #8b5cf6, #10b981, #0d9488);
+}
+.layer-item {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 14px; position: relative;
+}
+.layer-item::before {
+  content: ''; position: absolute; left: -32px; top: 28px;
+  width: 16px; height: 2px; background: var(--border-hover);
+}
+.layer-left {
+  padding: 24px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  position: relative; overflow: hidden;
+}
+.layer-left::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.l1 .layer-left::before { background: #3b82f6; }
+.l2 .layer-left::before { background: #10b981; }
+.l3 .layer-left::before { background: #f59e0b; }
+.l4 .layer-left::before { background: #8b5cf6; }
+.l5 .layer-left::before { background: #10b981; }
+.l6 .layer-left::before { background: #0d9488; }
+.layer-num {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+}
+.layer-left h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.layer-left p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.layer-right {
+  padding: 24px; border-radius: 12px;
+  border: 1px solid var(--border); background: rgba(255,255,255,0.015);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.layer-right-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;
+}
+.layer-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ltag {
+  font-size: 11px; padding: 3px 9px; border-radius: 4px;
+  border: 1px solid var(--border); color: var(--text-secondary);
+  background: rgba(255,255,255,0.03);
+}
+
+/* ── TWO LAYERS (Analyse + Umsetzung) ──────────── */
+.two-layers {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.two-layer-card {
+  padding: 36px 32px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  position: relative; overflow: hidden;
+}
+.two-layer-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.two-layer-card:first-child::before { background: var(--accent); }
+.two-layer-card:last-child::before { background: var(--teal); }
+.two-layer-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+.two-layer-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px; }
+.two-layer-card ul { list-style: none; }
+.two-layer-card ul li {
+  font-size: 14px; color: var(--text-secondary); padding: 5px 0;
+  display: flex; gap: 10px; line-height: 1.5;
+}
+.two-layer-card ul li::before { content: '→'; color: var(--text-muted); flex-shrink: 0; }
+
+/* ── BUSINESS MODEL ─────────────────────────────── */
+.biz-layers { display: flex; flex-direction: column; gap: 10px; }
+.biz-layer {
+  display: grid; grid-template-columns: 200px 1fr;
+  border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+}
+.biz-left {
+  padding: 22px 20px; display: flex; flex-direction: column;
+  justify-content: center; gap: 4px;
+}
+.biz-stage {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.biz-price { font-size: 18px; font-weight: 700; line-height: 1.2; }
+.biz-name { font-size: 12px; color: var(--text-secondary); }
+.biz-right {
+  padding: 20px 24px; background: var(--card-bg);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.biz-what { font-size: 14px; line-height: 1.55; }
+.biz-why { font-size: 13px; color: var(--text-secondary); font-style: italic; }
+.bl-free .biz-left { background: rgba(255,255,255,0.03); }
+.bl-poc .biz-left { background: rgba(16,185,129,0.06); border-right: 1px solid rgba(16,185,129,0.15); }
+.bl-roll .biz-left { background: rgba(59,130,246,0.06); border-right: 1px solid rgba(59,130,246,0.15); }
+.bl-agent .biz-left { background: rgba(245,158,11,0.06); border-right: 1px solid rgba(245,158,11,0.15); }
+
+/* ── GO-TO-MARKET ───────────────────────────────── */
+.gtm-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.gtm-card {
+  padding: 28px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  position: relative; overflow: hidden;
+}
+.gtm-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.gtm-card:nth-child(1)::before { background: var(--teal); }
+.gtm-card:nth-child(2)::before { background: var(--accent); }
+.gtm-card:nth-child(3)::before { background: var(--purple); }
+.gtm-num {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;
+}
+.gtm-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.gtm-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── TRUST / PRIVACY ────────────────────────────── */
+.trust-box {
+  border-radius: 14px; border: 1px solid rgba(16,185,129,0.2);
+  overflow: hidden;
+}
+.trust-header {
+  padding: 18px 28px;
+  background: rgba(16,185,129,0.06);
+  font-size: 16px; font-weight: 700; color: #34d399;
+  border-bottom: 1px solid rgba(16,185,129,0.12);
+}
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.trust-col { padding: 24px 28px; }
+.trust-col--yes { border-right: 1px solid var(--border); }
+.trust-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 14px; }
+.trust-col--yes h4 { color: #34d399; }
+.trust-col--no h4 { color: #f87171; }
+.trust-col ul { list-style: none; }
+.trust-col ul li {
+  font-size: 14px; color: var(--text-secondary);
+  padding: 6px 0; display: flex; gap: 8px; line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.trust-col ul li:last-child { border-bottom: none; }
+.trust-col--yes ul li::before { content: '✓'; color: #34d399; flex-shrink: 0; }
+.trust-col--no ul li::before { content: '✗'; color: #f87171; flex-shrink: 0; }
+
+/* ── CALLOUT ────────────────────────────────────── */
+.callout {
+  padding: 22px 28px; border-radius: 12px;
+  border: 1px solid; display: flex; gap: 14px;
+  align-items: flex-start; margin: 28px 0;
+}
+.callout--blue { border-color: rgba(59,130,246,0.25); background: rgba(59,130,246,0.04); }
+.callout--blue p { color: #93c5fd; }
+.callout--green { border-color: rgba(16,185,129,0.25); background: rgba(16,185,129,0.04); }
+.callout--green p { color: #6ee7b7; }
+.callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.callout p { font-size: 14px; line-height: 1.65; }
+.callout strong { color: var(--text); font-weight: 700; }
+
+/* ── FINAL CTA ──────────────────────────────────── */
+.final-cta {
+  margin-top: var(--section-gap);
+  padding: 80px 32px;
+  background: linear-gradient(135deg, var(--bg-2) 0%, rgba(59,130,246,0.06) 100%);
+  border-top: 1px solid rgba(59,130,246,0.15);
+  text-align: center;
+}
+.final-cta-inner { max-width: 620px; margin: 0 auto; }
+.final-cta-claim {
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent-light);
+  margin-bottom: 16px;
+}
+.final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700; letter-spacing: -0.5px;
+  margin-bottom: 16px; line-height: 1.2;
+}
+.final-cta p {
+  font-size: 17px; color: var(--text-secondary);
+  line-height: 1.7; margin-bottom: 32px;
+}
+.final-cta .btn-primary { font-size: 17px; padding: 16px 36px; border-radius: 12px; }
+.final-note {
+  margin-top: 20px; font-size: 13px; color: var(--text-muted);
+}
+
+/* ── FOOTER ─────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 32px; text-align: center;
+}
+footer p { font-size: 13px; color: var(--text-muted); }
+footer a { color: var(--text-secondary); text-decoration: none; }
+footer a:hover { color: var(--text); }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .value-strip { grid-template-columns: 1fr; }
+  .value-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .value-item:last-child { border-bottom: none; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .problem-grid, .product-grid, .arch-grid, .two-layers { grid-template-columns: 1fr; }
+  .conflict-grid, .killer-grid, .dept-grid, .usecase-grid, .sessions-grid, .gtm-grid { grid-template-columns: 1fr; }
+  .maturity-grid { grid-template-columns: 1fr 1fr; }
+  .layer-item { grid-template-columns: 1fr; }
+  .layers-wrap { padding-left: 0; }
+  .layers-spine { display: none; }
+  .layer-item::before { display: none; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .trust-col--yes { border-right: none; border-bottom: 1px solid var(--border); }
+  .biz-layer { grid-template-columns: 1fr; }
+  .biz-left { border-right: none !important; border-bottom: 1px solid var(--border); }
+}
+@media (max-width: 600px) {
+  :root { --section-gap: 80px; }
+  .container { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+  .hero { padding: 120px 0 60px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .maturity-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; }
+  .final-cta { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-dot"></span>
+      firmenwissen.ai
+    </a>
+    <ul class="nav-links">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#produkt">Produkt</a></li>
+      <li><a href="#workflow">So funktioniert's</a></li>
+      <li><a href="#ebenen">System</a></li>
+      <li><a href="#usecases">Use Cases</a></li>
+      <li><a href="#vertrauen">Vertrauen</a></li>
+    </ul>
+    <a href="mailto:marc@firmenwissen.ai" class="nav-cta">Kostenlos starten &rarr;</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-badge">firmenwissen.ai &middot; Wissen sichern. KI starten.</div>
+    <h1>Was passiert in Ihrem Unternehmen, wenn morgen <em>Ihr wichtigster Mitarbeiter geht?</em></h1>
+    <p class="hero-sub">
+      firmenwissen.ai macht sichtbar, wie Ihr Unternehmen wirklich funktioniert &mdash; und baut daraus Ihren ersten funktionierenden KI-Anwendungsfall. Ein Interview. Ein Report. Ein konkretes Ergebnis.
+    </p>
+    <div class="hero-ctas">
+      <a href="mailto:marc@firmenwissen.ai" class="btn-primary">Erstgespräch vereinbaren &rarr;</a>
+      <a href="#workflow" class="btn-secondary">So funktioniert es</a>
+    </div>
+    <div class="hero-pills">
+      <span class="pill pill--blue">Kein IT-Projekt nötig</span>
+      <span class="pill pill--green">BAFA-förderbar bis 80 %</span>
+      <span class="pill pill--amber">PoC kostenlos testen</span>
+      <span class="pill">Bis 100 Mitarbeiter</span>
+      <span class="pill">DSGVO &middot; EU-Hosting</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ VALUE STRIP ═══ -->
+<section>
+  <div class="container">
+    <div class="value-strip">
+      <div class="value-item">
+        <span class="value-icon">&#9201;</span>
+        <div class="value-label">Schneller produktiv</div>
+        <div class="value-desc">Neue Mitarbeiter lernen in Tagen statt Monaten</div>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">&#128274;</span>
+        <div class="value-label">Wissen gesichert</div>
+        <div class="value-desc">Kritisches Know-how bleibt im Unternehmen</div>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">&#9881;</span>
+        <div class="value-label">Prozesse sichtbar</div>
+        <div class="value-desc">Echte Arbeitsrealität statt Handbuch-Fiktion</div>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">&#129302;</span>
+        <div class="value-label">Erster KI-Agent</div>
+        <div class="value-desc">Konkreter Use Case, nicht abstrakte Strategie</div>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">&#128200;</span>
+        <div class="value-label">Messbarer ROI</div>
+        <div class="value-desc">Zeitersparnis und Fehlerreduktion ab Woche 1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WAS SIE BEKOMMEN ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">In 4 Schritten</div>
+    <h2 class="section-title">Was Sie konkret bekommen</h2>
+    <p class="section-desc">Kein Workshop-Marathon. Kein abstraktes Strategiepapier. Sondern ein klarer Weg von Erkenntnis zu Wirkung.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Link verschicken</h3>
+        <p>Sie wählen einen Unternehmensbereich. Ihre Mitarbeiter erhalten einen Interviewlink. Kein Setup, kein IT-Aufwand.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Wissen erfassen</h3>
+        <p>3 kurze Sessions à 20 Minuten. Modular, asynchron, jederzeit unterbrechbar. Die KI fragt gezielt nach dem, was wirklich zählt.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Report erhalten</h3>
+        <p>Sie erhalten eine strukturierte Analyse: Wo steckt kritisches Wissen? Wo droht Verlust? Wo liegt das größte KI-Potenzial?</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>KI-Agent starten</h3>
+        <p>Wir bauen den ersten KI-Anwendungsfall &mdash; auf Basis Ihrer echten Arbeitsrealität. Messbarer Nutzen ab Tag 1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAS EIGENTLICHE PROBLEM ═══ -->
+<section id="problem">
+  <div class="container">
+    <div class="divider"></div>
+    <div style="padding-top: var(--section-gap);"></div>
+    <div class="section-label">Die unbequeme Wahrheit</div>
+    <h2 class="section-title">Es gibt zwei Versionen jedes Prozesses in Ihrem Unternehmen</h2>
+    <p class="section-desc">Die offizielle Version steht im Handbuch. Die echte Version lebt im Kopf Ihrer Mitarbeiter. Die Lücke dazwischen ist Ihr größtes Risiko &mdash; und Ihre größte Chance.</p>
+    <div class="problem-grid">
+      <div class="problem-card problem-card--official">
+        <div class="problem-tag">Version A &middot; Offiziell</div>
+        <h3>Was im Handbuch steht</h3>
+        <p>Standardisierte Abläufe, die niemand genau so befolgt. Dokumentationen, die veraltet sind. Prozesse, die auf dem Papier funktionieren.</p>
+        <ul>
+          <li>Letzte Aktualisierung: unklar</li>
+          <li>Abweichungen: nicht erfasst</li>
+          <li>Workarounds: unsichtbar</li>
+        </ul>
+      </div>
+      <div class="problem-card problem-card--real">
+        <div class="problem-tag">Version B &middot; Gelebte Realität</div>
+        <h3>Wie die Arbeit wirklich funktioniert</h3>
+        <p>Erfahrungswissen, Abkürzungen, Entscheidungsregeln &mdash; alles im Kopf der Person, die es jeden Tag tut. Hocheffizient. Aber nicht übertragbar.</p>
+        <ul>
+          <li>Existiert nur in einzelnen Köpfen</li>
+          <li>Geht verloren bei Kündigung oder Krankheit</li>
+          <li>Ist der eigentliche Wert Ihres Unternehmens</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout callout--blue" style="margin-top: 28px;">
+      <span class="callout-icon">&#128161;</span>
+      <p><strong>firmenwissen.ai schließt genau diese Lücke.</strong> Wir machen sichtbar, was heute nur in Köpfen existiert &mdash; und übersetzen es in strukturiertes Wissen und funktionsfähige KI-Anwendungen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAS PRODUKT ═══ -->
+<section id="produkt">
+  <div class="container">
+    <div class="section-label">Unser Ansatz</div>
+    <h2 class="section-title">Nicht Beratung. Nicht Workshop. Sondern ein System.</h2>
+    <p class="section-desc">firmenwissen.ai ist kein klassisches Beratungsprojekt. Es ist ein strukturierter Weg von implizitem Wissen zu operativer KI-Anwendung.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="product-icon">&#128269;</span>
+        <h3>Wissenssicherung als Einstieg</h3>
+        <p>Wir erfassen systematisch, wie Arbeit in Ihrem Unternehmen wirklich funktioniert. Nicht durch Beobachtung von außen, sondern durch intelligente Interviews mit den Menschen, die es jeden Tag tun.</p>
+        <div class="product-badge">Phase 1 &middot; Analyse</div>
+      </div>
+      <div class="product-card">
+        <span class="product-icon">&#9889;</span>
+        <h3>KI-Umsetzung als Ergebnis</h3>
+        <p>Aus dem gesicherten Wissen entsteht ein konkreter KI-Anwendungsfall: ein Agent, der Angebote erstellt, Tickets beantwortet oder neue Mitarbeiter einarbeitet. Messbar, produktiv, sofort einsetzbar.</p>
+        <div class="product-badge">Phase 2 &middot; Umsetzung</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORKFLOW DETAILLIERT ═══ -->
+<section id="workflow">
+  <div class="container">
+    <div class="section-label">Der Ablauf</div>
+    <h2 class="section-title">So einfach funktioniert es</h2>
+    <p class="section-desc">Von der ersten Frage bis zum produktiven KI-Agenten. Kein Setup, kein Berater vor Ort, kein komplexes IT-Projekt.</p>
+    <div class="workflow-steps">
+      <div class="wf-step s1">
+        <div class="wf-left"><div class="wf-circle">1</div><div class="wf-line"></div></div>
+        <div class="wf-body"><div class="wf-body-inner">
+          <div class="wf-role">Sie</div>
+          <div class="wf-title">Bereich auswählen und Link teilen</div>
+          <div class="wf-desc">Wählen Sie einen Unternehmensbereich &mdash; Vertrieb, Service, Buchhaltung oder einen anderen. Ihre Mitarbeiter erhalten einen personalisierten Interviewlink.</div>
+          <div class="wf-tags"><span class="wf-tag">2 Minuten</span><span class="wf-tag--out wf-tag">Interviewlink</span></div>
+        </div></div>
+      </div>
+      <div class="wf-step s2">
+        <div class="wf-left"><div class="wf-circle">2</div><div class="wf-line"></div></div>
+        <div class="wf-body"><div class="wf-body-inner">
+          <div class="wf-role">Mitarbeiter</div>
+          <div class="wf-title">KI-geführtes Interview durchlaufen</div>
+          <div class="wf-desc">3 Sessions à ca. 20 Minuten. Modular, asynchron, jederzeit unterbrechbar. Die KI stellt gezielte Fragen &mdash; nicht oberflächlich, sondern methodisch präzise. Multi-Perspektive pro Bereich.</div>
+          <div class="wf-tags"><span class="wf-tag">3 &times; 20 Min.</span><span class="wf-tag">Asynchron</span><span class="wf-tag--out wf-tag">Strukturierte Antworten</span></div>
+        </div></div>
+      </div>
+      <div class="wf-step s3">
+        <div class="wf-left"><div class="wf-circle">3</div><div class="wf-line"></div></div>
+        <div class="wf-body"><div class="wf-body-inner">
+          <div class="wf-role">System</div>
+          <div class="wf-title">Analyse, Strukturierung und Bewertung</div>
+          <div class="wf-desc">Das System vergleicht Perspektiven, erkennt Muster und Widersprüche, bewertet Reifegrade und priorisiert Use Cases nach Impact Score. Validierungsschleife eingebaut.</div>
+          <div class="wf-tags"><span class="wf-tag">Automatisch</span><span class="wf-tag--out wf-tag">Wissensreport</span><span class="wf-tag--out wf-tag">Top-Use-Cases</span></div>
+        </div></div>
+      </div>
+      <div class="wf-step s4">
+        <div class="wf-left"><div class="wf-circle">4</div><div class="wf-line"></div></div>
+        <div class="wf-body"><div class="wf-body-inner">
+          <div class="wf-role">Wir gemeinsam</div>
+          <div class="wf-title">Ersten KI-Anwendungsfall umsetzen</div>
+          <div class="wf-desc">Aus dem priorisierten Use Case wird ein produktiver KI-Agent gebaut &mdash; auf Basis Ihrer echten Prozesse, nicht generischer Templates. Messbarer Nutzen ab Woche 1.</div>
+          <div class="wf-tags"><span class="wf-tag--out wf-tag">Produktiver KI-Agent</span><span class="wf-tag--out wf-tag">Messbarer ROI</span></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ARCHITEKTUR ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Methodik</div>
+    <h2 class="section-title">Warum unsere Interviews besser sind als klassische Wissenserfassung</h2>
+    <p class="section-desc">Die Fragetechnik lebt im System-Prompt, nicht im RAG. Das bedeutet: Jede Frage reagiert intelligent auf die vorherige Antwort.</p>
+    <div class="arch-grid">
+      <div class="arch-card arch-card--correct">
+        <div class="arch-tag">&#10003; Unser Ansatz</div>
+        <h3>System-Prompt: Fragetechnik</h3>
+        <p>Die Interview-Logik ist tief im System verankert. Sie reagiert kontextabhängig, stellt Rückfragen und erkennt, wenn Antworten oberflächlich bleiben. Kein starrer Fragenkatalog.</p>
+      </div>
+      <div class="arch-card arch-card--wrong">
+        <div class="arch-tag">&#10007; Typischer Ansatz</div>
+        <h3>RAG-basierte Fragelisten</h3>
+        <p>Statische Fragen aus einer Datenbank. Keine Reaktion auf Kontext. Oberflächliche Erfassung. Mitarbeiter antworten routiniert statt ehrlich.</p>
+      </div>
+    </div>
+    <div class="callout callout--green">
+      <span class="callout-icon">&#128640;</span>
+      <p><strong>RAG nutzen wir gezielt</strong> &mdash; für Benchmarks, wissenschaftliche Grundlagen und optional für Ihre bestehenden Dokumente. Die eigentliche Intelligenz steckt in der Fragetechnik.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONFLIKT-LOGIK ═══ -->
+<section id="konflikt">
+  <div class="container">
+    <div class="section-label">Analyse-Tiefe</div>
+    <h2 class="section-title">Wir moderieren Widersprüche nicht weg &mdash; wir machen sie sichtbar</h2>
+    <p class="section-desc">Wenn drei Mitarbeiter denselben Prozess unterschiedlich beschreiben, ist das kein Fehler. Es ist der wichtigste Hinweis.</p>
+    <div class="conflict-grid">
+      <div class="conflict-card">
+        <div class="conflict-type conflict-type--pattern">Muster</div>
+        <h3>Mehrere Mitarbeiter beschreiben dasselbe</h3>
+        <p>Stabile, bewährte Abläufe, die sich durchgesetzt haben. Oft die effizienteste Version &mdash; und trotzdem nirgends dokumentiert.</p>
+        <div class="conflict-action">&#8594; Direkt dokumentier- und automatisierbar</div>
+      </div>
+      <div class="conflict-card">
+        <div class="conflict-type conflict-type--deviation">Abweichung</div>
+        <h3>Offizieller Prozess und gelebte Praxis divergieren</h3>
+        <p>Die Handbuch-Version wird umgangen. Gründe: veraltet, ineffizient, an der Realität vorbei. Die Abweichung zeigt, wo Optimierung liegt.</p>
+        <div class="conflict-action">&#8594; Klarer Hebel für Prozessverbesserung</div>
+      </div>
+      <div class="conflict-card">
+        <div class="conflict-type conflict-type--conflict">Widerspruch</div>
+        <h3>Verschiedene Perspektiven widersprechen sich</h3>
+        <p>Abteilung A sagt X, Abteilung B sagt Y. Kein falscher Konsens &mdash; sondern ein Warnsignal für Reibungsverluste und Risiken.</p>
+        <div class="conflict-action">&#8594; Höchste strategische Relevanz</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REIFEGRAD + IMPACT SCORE ═══ -->
+<section id="reifegrad">
+  <div class="container">
+    <div class="section-label">Bewertung</div>
+    <h2 class="section-title">Reifegrad-Modell &amp; Impact Score</h2>
+    <p class="section-desc">Jeder Bereich wird auf einer 5-stufigen Skala bewertet. Daraus entsteht eine klare Priorisierung für Ihre KI-Roadmap.</p>
+    <div class="maturity-grid">
+      <div class="maturity-card m1">
+        <div class="maturity-level">Stufe 1</div>
+        <div class="maturity-name">Kritisch</div>
+        <div class="maturity-desc">Wissen existiert nur in einzelnen Köpfen. Kein Backup, keine Übergabe möglich.</div>
+        <div class="maturity-signal">&#8222;Wenn Herr Müller geht, weiß niemand, wie das läuft.&#8220;</div>
+      </div>
+      <div class="maturity-card m2">
+        <div class="maturity-level">Stufe 2</div>
+        <div class="maturity-name">Fragmentiert</div>
+        <div class="maturity-desc">Teile sind dokumentiert, aber veraltet, unvollständig oder verstreut.</div>
+        <div class="maturity-signal">&#8222;Steht irgendwo im Wiki, aber da schaut keiner rein.&#8220;</div>
+      </div>
+      <div class="maturity-card m3">
+        <div class="maturity-level">Stufe 3</div>
+        <div class="maturity-name">Dokumentiert</div>
+        <div class="maturity-desc">Prozesse sind erfasst, aber nicht aktuell gepflegt oder gelebt.</div>
+        <div class="maturity-signal">&#8222;Wir haben das mal aufgeschrieben, aber seitdem hat sich viel geändert.&#8220;</div>
+      </div>
+      <div class="maturity-card m4">
+        <div class="maturity-level">Stufe 4</div>
+        <div class="maturity-name">Strukturiert</div>
+        <div class="maturity-desc">Klare Abläufe, gepflegt, übertragbar. Grundlage für Skalierung.</div>
+        <div class="maturity-signal">&#8222;Jeder neue Mitarbeiter bekommt eine echte Einarbeitung.&#8220;</div>
+      </div>
+      <div class="maturity-card m5">
+        <div class="maturity-level">Stufe 5</div>
+        <div class="maturity-name">Automatisierbar</div>
+        <div class="maturity-desc">Wissen ist so strukturiert, dass KI darauf aufbauen kann.</div>
+        <div class="maturity-signal">&#8222;Das könnte eine KI übernehmen &mdash; und es wäre besser.&#8220;</div>
+      </div>
+    </div>
+    <div class="impact-box">
+      <div class="impact-title">Impact Score &mdash; Priorisierung der Top-Use-Cases</div>
+      <div class="impact-formula">
+        <div class="impact-factor"><span>&#9201;</span> <span>Zeitaufwand</span></div>
+        <div class="impact-op">&times;</div>
+        <div class="impact-factor"><span>&#128260;</span> <span>Häufigkeit</span></div>
+        <div class="impact-op">&times;</div>
+        <div class="impact-factor"><span>&#9888;</span> <span>Fehlerkosten</span></div>
+        <div class="impact-op">&times;</div>
+        <div class="impact-factor"><span>&#9881;</span> <span>Automatisierbarkeit</span></div>
+        <div class="impact-op">=</div>
+        <div class="impact-result">Impact Score</div>
+      </div>
+      <div class="impact-desc">Aus diesen vier Faktoren berechnen wir, welche Use Cases den höchsten ROI versprechen. Keine Bauchgefühl-Entscheidung, sondern datenbasierte Priorisierung.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INTERVIEW SESSIONS ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Das modulare Interview</div>
+    <h2 class="section-title">3 Sessions. 60 Minuten gesamt. Kein Stress.</h2>
+    <p class="section-desc">Das Interview ist psychologisch sauber aufgebaut. Keine Bewertung. Keine Überwachung. Sondern echtes Interesse am Wissen Ihrer Mitarbeiter.</p>
+    <div class="sessions-grid">
+      <div class="session-card">
+        <div class="session-head sh-1"><span class="s-num">Session 1</span><span class="s-time">~20 Min.</span></div>
+        <div class="session-body">
+          <h4>Kontext &amp; Rolle</h4>
+          <ul>
+            <li>Arbeitsalltag verstehen</li>
+            <li>Kernaufgaben erfassen</li>
+            <li>Wichtigste Werkzeuge und Systeme</li>
+            <li>Typische Herausforderungen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-head sh-2"><span class="s-num">Session 2</span><span class="s-time">~20 Min.</span></div>
+        <div class="session-body">
+          <h4>Prozesse &amp; Entscheidungen</h4>
+          <ul>
+            <li>Entscheidungslogik erfassen</li>
+            <li>Abkürzungen und Workarounds</li>
+            <li>Abhängigkeiten und Schnittstellen</li>
+            <li>Implizite Regeln sichtbar machen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-head sh-3"><span class="s-num">Session 3</span><span class="s-time">~20 Min.</span></div>
+        <div class="session-body">
+          <h4>Validierung &amp; Vertiefung</h4>
+          <ul>
+            <li>Ergebnisse gegenlesen</li>
+            <li>Lücken schließen</li>
+            <li>Widersprüche klären</li>
+            <li>Priorisierung schärfen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="trust-box" style="margin-top: 28px;">
+      <div class="trust-header">Vertrauen von Anfang an</div>
+      <div class="trust-grid">
+        <div class="trust-col trust-col--yes">
+          <h4>Was Mitarbeiter erfahren</h4>
+          <ul>
+            <li>Warum dieses Interview stattfindet</li>
+            <li>Dass ihr Wissen wertvoll ist</li>
+            <li>Dass nichts zur Leistungsbewertung dient</li>
+            <li>Dass sie jederzeit pausieren können</li>
+          </ul>
+        </div>
+        <div class="trust-col trust-col--no">
+          <h4>Was garantiert nicht passiert</h4>
+          <ul>
+            <li>Keine Leistungsbewertung</li>
+            <li>Keine Überwachung</li>
+            <li>Keine Weitergabe sensibler Inhalte</li>
+            <li>Keine Namensnennung im Report</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KILLER FEATURES ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Differenzierung</div>
+    <h2 class="section-title">Was firmenwissen.ai anders macht</h2>
+    <p class="section-desc">Andere beraten zu KI. Wir machen reale Arbeitslogik sichtbar und operationalisierbar.</p>
+    <div class="killer-grid">
+      <div class="killer-card">
+        <span class="killer-icon">&#128101;</span>
+        <h3>Multi-Perspektive</h3>
+        <p>Mehrere Mitarbeiter beschreiben denselben Bereich. Daraus entsteht ein vollständiges Bild &mdash; nicht die Sicht einer einzelnen Person.</p>
+      </div>
+      <div class="killer-card">
+        <span class="killer-icon">&#128204;</span>
+        <h3>Offiziell vs. Gelebt</h3>
+        <p>Wir vergleichen systematisch, was auf dem Papier steht und was wirklich passiert. Die Differenz zeigt, wo der größte Hebel liegt.</p>
+      </div>
+      <div class="killer-card">
+        <span class="killer-icon">&#128202;</span>
+        <h3>Benchmarking-fähig</h3>
+        <p>Ihre Ergebnisse werden langfristig vergleichbar &mdash; intern zwischen Abteilungen, extern mit anonymisierten Branchenwerten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UNTERNEHMENSBEREICHE ═══ -->
+<section id="bereiche">
+  <div class="container">
+    <div class="section-label">Einsatzbereiche</div>
+    <h2 class="section-title">Für jeden Bereich, in dem Wissen entscheidend ist</h2>
+    <p class="section-desc">Starten Sie mit dem Bereich, in dem der Druck am größten ist. Weitere folgen nach Bedarf.</p>
+    <div class="dept-grid">
+      <div class="dept-card">
+        <span class="dept-icon">&#128176;</span>
+        <h3>Vertrieb</h3>
+        <p>Angebotslogik, Preisgestaltung, Kundenkommunikation &mdash; oft in wenigen Köpfen konzentriert.</p>
+        <span class="dept-auto">Angebots-KI</span>
+      </div>
+      <div class="dept-card">
+        <span class="dept-icon">&#127897;</span>
+        <h3>Service &amp; Support</h3>
+        <p>Ticket-Bearbeitung, Eskalationsregeln, häufige Probleme &mdash; idealer Bereich für KI-Automatisierung.</p>
+        <span class="dept-auto">Ticket-Agent</span>
+      </div>
+      <div class="dept-card">
+        <span class="dept-icon">&#128218;</span>
+        <h3>Buchhaltung</h3>
+        <p>Kontierungslogik, Sonderfälle, Abstimmungsprozesse &mdash; fehleranfällig und zeitintensiv.</p>
+        <span class="dept-auto">Kontierungs-Assistent</span>
+      </div>
+      <div class="dept-card">
+        <span class="dept-icon">&#128104;&#8205;&#128188;</span>
+        <h3>HR &amp; Onboarding</h3>
+        <p>Einarbeitungswissen, Ansprechpartner, ungeschriebene Regeln &mdash; bei jedem Neuzugang kritisch.</p>
+        <span class="dept-auto">Onboarding-Agent</span>
+      </div>
+      <div class="dept-card">
+        <span class="dept-icon">&#128226;</span>
+        <h3>Marketing</h3>
+        <p>Kampagnenlogik, Tonalität, Kanalstrategie &mdash; oft bei einer Person gebündelt.</p>
+        <span class="dept-auto">Content-Assistent</span>
+      </div>
+      <div class="dept-card">
+        <span class="dept-icon">&#128230;</span>
+        <h3>Einkauf</h3>
+        <p>Lieferantenauswahl, Verhandlungsstrategien, Bestelllogik &mdash; Erfahrungswissen par excellence.</p>
+        <span class="dept-auto">Bestell-Optimierung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TOP 3 USE CASES ═══ -->
+<section id="usecases">
+  <div class="container">
+    <div class="section-label">Erste Ergebnisse</div>
+    <h2 class="section-title">Die 3 Use Cases, die am schnellsten wirken</h2>
+    <p class="section-desc">Diese Anwendungsfälle lassen sich direkt aus dem Wissensreport umsetzen &mdash; mit messbarem ROI.</p>
+    <div class="usecase-grid">
+      <div class="usecase-card usecase-card--featured">
+        <span class="uc-badge">Empfohlen</span>
+        <span class="usecase-icon">&#128196;</span>
+        <div class="usecase-area">Vertrieb</div>
+        <h3>Angebots-Erstellung automatisieren</h3>
+        <p>Der KI-Agent kennt Ihre Preislogik, Konditionen und Angebotsstruktur. Er erstellt Angebote auf Basis Ihrer echten Vertriebsregeln &mdash; nicht generischer Templates.</p>
+        <div class="uc-tags">
+          <span class="uc-tag uc-tag--green">Hohe Zeitersparnis</span>
+          <span class="uc-tag uc-tag--blue">Sofort einsetzbar</span>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <span class="usecase-icon">&#128233;</span>
+        <div class="usecase-area">Service</div>
+        <h3>Ticket- und E-Mail-Antworten vorformulieren</h3>
+        <p>Wiederkehrende Anfragen werden auf Basis Ihres tatsächlichen Lösungswissens beantwortet. Nicht generisch, sondern in Ihrer Sprache und Logik.</p>
+        <div class="uc-tags">
+          <span class="uc-tag uc-tag--green">Weniger Fehler</span>
+          <span class="uc-tag uc-tag--amber">Hohe Frequenz</span>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <span class="usecase-icon">&#127891;</span>
+        <div class="usecase-area">HR</div>
+        <h3>Onboarding- und Wissens-Agent</h3>
+        <p>Neue Mitarbeiter fragen den Agenten statt Kollegen. Er kennt Abläufe, Ansprechpartner, Tools und ungeschriebene Regeln &mdash; 24/7 verfügbar.</p>
+        <div class="uc-tags">
+          <span class="uc-tag uc-tag--green">Schnellere Einarbeitung</span>
+          <span class="uc-tag uc-tag--blue">Entlastet Team</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 EBENEN DES SYSTEMS ═══ -->
+<section id="ebenen">
+  <div class="container">
+    <div class="section-label">Systemarchitektur</div>
+    <h2 class="section-title">6 Ebenen &mdash; von der Frage bis zur Wirkung</h2>
+    <p class="section-desc">firmenwissen.ai ist kein einzelnes Tool. Es ist ein durchdachtes System aus sechs aufeinander aufbauenden Ebenen.</p>
+    <div class="layers-wrap">
+      <div class="layers-spine"></div>
+      <div class="layer-item l1">
+        <div class="layer-left">
+          <div class="layer-num">Ebene 1</div>
+          <h3>Wissensextraktion</h3>
+          <p>KI-geführte Interviews erfassen, was in Köpfen steckt. Methodisch, empathisch, tiefgehend.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-right-label">Output</div>
+          <div class="layer-tags"><span class="ltag">Rohantworten</span><span class="ltag">Kontextdaten</span><span class="ltag">Perspektiven</span></div>
+        </div>
+      </div>
+      <div class="layer-item l2">
+        <div class="layer-left">
+          <div class="layer-num">Ebene 2</div>
+          <h3>Strukturierung</h3>
+          <p>Antworten werden in Prozesse, Entscheidungsregeln und Wissenseinheiten zerlegt.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-right-label">Output</div>
+          <div class="layer-tags"><span class="ltag">Prozessmodelle</span><span class="ltag">Entscheidungsbäume</span><span class="ltag">Wissensgraph</span></div>
+        </div>
+      </div>
+      <div class="layer-item l3">
+        <div class="layer-left">
+          <div class="layer-num">Ebene 3</div>
+          <h3>Bewertung</h3>
+          <p>Reifegrad, Impact Score und Konfliktanalyse zeigen, wo der größte Hebel liegt.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-right-label">Output</div>
+          <div class="layer-tags"><span class="ltag">Reifegrad-Map</span><span class="ltag">Impact-Ranking</span><span class="ltag">Konflikt-Report</span></div>
+        </div>
+      </div>
+      <div class="layer-item l4">
+        <div class="layer-left">
+          <div class="layer-num">Ebene 4</div>
+          <h3>Übersetzung</h3>
+          <p>Aus Wissen werden konkrete KI-Anwendungsfälle: Prompt-Designs, Agent-Architekturen, Datenflüsse.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-right-label">Output</div>
+          <div class="layer-tags"><span class="ltag">Use-Case-Specs</span><span class="ltag">Agent-Blueprints</span><span class="ltag">Prompt-Designs</span></div>
+        </div>
+      </div>
+      <div class="layer-item l5">
+        <div class="layer-left">
+          <div class="layer-num">Ebene 5</div>
+          <h3>Umsetzung</h3>
+          <p>Der KI-Agent wird gebaut, getestet und in Ihren Arbeitsalltag integriert.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-right-label">Output</div>
+          <div class="layer-tags"><span class="ltag">Produktiver Agent</span><span class="ltag">Integration</span><span class="ltag">Testing</span></div>
+        </div>
+      </div>
+      <div class="layer-item l6">
+        <div class="layer-left">
+          <div class="layer-num">Ebene 6</div>
+          <h3>Wirkung &amp; Feedback</h3>
+          <p>Ergebnisse werden gemessen, optimiert und als Basis für weitere Anwendungsfälle genutzt.</p>
+        </div>
+        <div class="layer-right">
+          <div class="layer-right-label">Output</div>
+          <div class="layer-tags"><span class="ltag">KPI-Tracking</span><span class="ltag">Optimierung</span><span class="ltag">Skalierung</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VON ERKENNTNIS ZU ERGEBNIS ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Zwei Schichten</div>
+    <h2 class="section-title">Ein Report allein reicht nicht. Umsetzung gehört dazu.</h2>
+    <p class="section-desc">Viele Analysen enden in der Schublade. Bei uns nicht. Die Analyse-Schicht liefert Klarheit. Die Umsetzungs-Schicht liefert Ergebnisse.</p>
+    <div class="two-layers">
+      <div class="two-layer-card">
+        <h3>Analyse-Schicht</h3>
+        <p>Wissen erfassen, strukturieren, bewerten und priorisieren. Das Ergebnis: ein klarer Report mit konkreten Handlungsempfehlungen.</p>
+        <ul>
+          <li>Wissensextraktion per Interview</li>
+          <li>Reifegrad-Bewertung pro Bereich</li>
+          <li>Impact-basierte Priorisierung</li>
+          <li>Konflikt- und Muster-Analyse</li>
+        </ul>
+      </div>
+      <div class="two-layer-card">
+        <h3>Umsetzungs-Schicht</h3>
+        <p>Den priorisierten Use Case in einen produktiven KI-Agenten übersetzen. Nicht irgendwann, sondern direkt im Anschluss.</p>
+        <ul>
+          <li>Agent-Architektur und Prompt-Design</li>
+          <li>Integration in bestehende Systeme</li>
+          <li>Testing mit echten Szenarien</li>
+          <li>Messung und Optimierung</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GESCHÄFTSMODELL ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Leistungen &amp; Investition</div>
+    <h2 class="section-title">Ein Einstieg, der sich rechnet</h2>
+    <p class="section-desc">Starten Sie niedrigschwellig. Skalieren Sie nach Ergebnis.</p>
+    <div class="biz-layers">
+      <div class="biz-layer bl-free">
+        <div class="biz-left">
+          <div class="biz-stage">Einstieg</div>
+          <div class="biz-price">Kostenlos</div>
+          <div class="biz-name">Erstgespräch + Mini-Analyse</div>
+        </div>
+        <div class="biz-right">
+          <div class="biz-what">30-minütiges Erstgespräch. Wir zeigen Ihnen anhand Ihres konkreten Falls, wo das größte Potenzial liegt.</div>
+          <div class="biz-why">Kein Risiko, kein Commitment. Sie entscheiden danach, ob es weitergeht.</div>
+        </div>
+      </div>
+      <div class="biz-layer bl-poc">
+        <div class="biz-left">
+          <div class="biz-stage">Phase 1</div>
+          <div class="biz-price">Analyse</div>
+          <div class="biz-name">Wissens-Report + Use-Case-Priorisierung</div>
+        </div>
+        <div class="biz-right">
+          <div class="biz-what">Vollständige Wissenserfassung eines Bereichs. Reifegrad-Bewertung, Impact Score, Konflikt-Analyse. Konkreter Report mit Top-Use-Cases.</div>
+          <div class="biz-why">Der Report allein hat Wert &mdash; als Organisationsanalyse und Wissenssicherung.</div>
+        </div>
+      </div>
+      <div class="biz-layer bl-roll">
+        <div class="biz-left">
+          <div class="biz-stage">Phase 2</div>
+          <div class="biz-price">Umsetzung</div>
+          <div class="biz-name">KI-Agent bauen + integrieren</div>
+        </div>
+        <div class="biz-right">
+          <div class="biz-what">Den priorisierten Use Case in einen produktiven KI-Agenten übersetzen. Testing, Integration, Launch.</div>
+          <div class="biz-why">Hier entsteht der messbare ROI. Der Agent arbeitet ab Tag 1 mit.</div>
+        </div>
+      </div>
+      <div class="biz-layer bl-agent">
+        <div class="biz-left">
+          <div class="biz-stage">Laufend</div>
+          <div class="biz-price">Betrieb</div>
+          <div class="biz-name">Weiterentwicklung + Benchmarking</div>
+        </div>
+        <div class="biz-right">
+          <div class="biz-what">Laufende Optimierung, neue Use Cases, Benchmarking gegen Branchenwerte. Ihr Wissenssystem wächst mit.</div>
+          <div class="biz-why">Langfristiger Wettbewerbsvorteil durch systematisches Wissensmanagement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GO-TO-MARKET ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">Rollout</div>
+    <h2 class="section-title">Bewährt. Skalierbar. Partnerschaftlich.</h2>
+    <div class="gtm-grid" style="margin-top: 40px;">
+      <div class="gtm-card">
+        <div class="gtm-num">Schritt 1</div>
+        <h3>Interner Pilot</h3>
+        <p>Wir starten mit einem Bereich in Ihrem Unternehmen. Schnell, unkompliziert, ohne großes Projekt. Ergebnisse in wenigen Wochen.</p>
+      </div>
+      <div class="gtm-card">
+        <div class="gtm-num">Schritt 2</div>
+        <h3>Externer Rollout</h3>
+        <p>Nach erfolgreichem Pilot: Ausweitung auf weitere Bereiche oder Standorte. Das System skaliert mit Ihrem Bedarf.</p>
+      </div>
+      <div class="gtm-card">
+        <div class="gtm-num">Optional</div>
+        <h3>Berater-Netzwerk</h3>
+        <p>Sie sind Berater oder Multiplikator? firmenwissen.ai lässt sich als Analysewerkzeug in Ihre Projekte integrieren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST / DATENSCHUTZ ═══ -->
+<section id="vertrauen">
+  <div class="container">
+    <div class="section-label">Sicherheit &amp; Datenschutz</div>
+    <h2 class="section-title">Ihr Wissen bleibt bei Ihnen</h2>
+    <p class="section-desc">Wir nehmen Datenschutz ernst. Nicht als Pflichtprogramm, sondern als Grundprinzip.</p>
+    <div class="trust-box">
+      <div class="trust-header">Unsere Zusagen an Sie</div>
+      <div class="trust-grid">
+        <div class="trust-col trust-col--yes">
+          <h4>Das garantieren wir</h4>
+          <ul>
+            <li>DSGVO-konform in allen Prozessen</li>
+            <li>EU-Hosting &mdash; keine Daten außerhalb Europas</li>
+            <li>Wissen bleibt Eigentum Ihres Unternehmens</li>
+            <li>Verschlüsselte Übertragung und Speicherung</li>
+            <li>Löschung auf Anfrage jederzeit möglich</li>
+          </ul>
+        </div>
+        <div class="trust-col trust-col--no">
+          <h4>Das passiert garantiert nicht</h4>
+          <ul>
+            <li>Keine Leistungsbewertung von Mitarbeitern</li>
+            <li>Keine Überwachung oder Tracking</li>
+            <li>Keine Weitergabe an Dritte</li>
+            <li>Kein Training von KI-Modellen mit Ihren Daten</li>
+            <li>Keine versteckten Datennutzungen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="final-cta-claim">Der erste Schritt</div>
+    <h2>Starten Sie mit einem Bereich. Sehen Sie, was möglich ist.</h2>
+    <p>
+      Kein langfristiges Commitment. Kein IT-Projekt. Kein Berater, der wochenlang in Ihrem Büro sitzt. Sondern ein klarer, schneller Weg zu Klarheit über Ihr wichtigstes Asset: das Wissen Ihrer Mitarbeiter.
+    </p>
+    <a href="mailto:marc@firmenwissen.ai" class="btn-primary" style="font-size: 17px; padding: 16px 36px; border-radius: 12px;">
+      Erstgespräch vereinbaren &rarr;
+    </a>
+    <div class="final-note">Kostenlos &middot; 30 Minuten &middot; Unverbindlich &middot; Sofort Klarheit</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <p style="margin-bottom: 8px;"><strong style="color: var(--text);">firmenwissen.ai</strong></p>
+    <p>Implizites Wissen sichtbar machen. KI produktiv einsetzen.</p>
+    <p style="margin-top: 16px;">
+      <a href="mailto:marc@firmenwissen.ai">marc@firmenwissen.ai</a> &middot;
+      <a href="#vertrauen">Datenschutz</a> &middot;
+      <a href="#">Impressum</a>
+    </p>
+    <p style="margin-top: 12px;">&copy; 2026 firmenwissen.ai &middot; BMB Deutschland GmbH</p>
+  </div>
+</footer>
+
+<!-- Minimal JS for smooth nav background on scroll -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(8, 16, 28, 0.95)';
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
+    } else {
+      nav.style.background = 'rgba(8, 16, 28, 0.85)';
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
+    }
+  });
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
